@@ -1,8 +1,8 @@
 // ============================================================================
 // WinWnd.cpp, 2019
-// Вариант 0.01.00
+// Г‚Г Г°ГЁГ Г­ГІ 0.01.00
 //
-// Девиз дня: Поиск по файлам строки "TODO" полезен.
+// Г„ГҐГўГЁГ§ Г¤Г­Гї: ГЏГ®ГЁГ±ГЄ ГЇГ® ГґГ Г©Г«Г Г¬ Г±ГІГ°Г®ГЄГЁ "TODO" ГЇГ®Г«ГҐГ§ГҐГ­. 
 // ============================================================================
 
 
@@ -21,13 +21,13 @@ int Width = 640, Height = 480;
 static HINSTANCE hModule = nullptr;
 
 static const char * const szWindowClass = "ArtWndClass";
-static const char * const szTitle = "Тестовое окно";
+static const char * const szTitle = "Г’ГҐГ±ГІГ®ГўГ®ГҐ Г®ГЄГ­Г®";
 
-static ATOM WndClass = 0;   // Редактор связей ака линкер видит статические
-static HWND hWnd = nullptr; // глобальные переменные только в этом файле
-static HDC hWndDC, hBitmapDC, hMemDC; // они так и называются – файловые
-static HBITMAP hBitmap;               // переменные и работают как
-                                      // приватные поля в классе.
+static ATOM WndClass = 0;   // ГђГҐГ¤Г ГЄГІГ®Г° Г±ГўГїГ§ГҐГ© Г ГЄГ  Г«ГЁГ­ГЄГҐГ° ГўГЁГ¤ГЁГІ Г±ГІГ ГІГЁГ·ГҐГ±ГЄГЁГҐ
+static HWND hWnd = nullptr; // ГЈГ«Г®ГЎГ Г«ГјГ­Г»ГҐ ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ ГІГ®Г«ГјГЄГ® Гў ГЅГІГ®Г¬ ГґГ Г©Г«ГҐ
+static HDC hWndDC, hBitmapDC, hMemDC; // Г®Г­ГЁ ГІГ ГЄ ГЁ Г­Г Г§Г»ГўГ ГѕГІГ±Гї вЂ“ ГґГ Г©Г«Г®ГўГ»ГҐ
+static HBITMAP hBitmap;               // ГЇГҐГ°ГҐГ¬ГҐГ­Г­Г»ГҐ ГЁ Г°Г ГЎГ®ГІГ ГѕГІ ГЄГ ГЄ
+                                      // ГЇГ°ГЁГўГ ГІГ­Г»ГҐ ГЇГ®Г«Гї Гў ГЄГ«Г Г±Г±ГҐ.
 
 // ----------------------------------------------------------------------------
 static ATOM RegisterWndClass(void);
@@ -39,9 +39,9 @@ static LRESULT CALLBACK WndProc(HWND , UINT , WPARAM , LPARAM );
 // ============================================================================
 void TestDraw(void)
 {
-    // Word6bit c; Это мы в другом проекте рассмотрим. )
+    // Word6bit c; ГќГІГ® Г¬Г» Гў Г¤Г°ГіГЈГ®Г¬ ГЇГ°Г®ГҐГЄГІГҐ Г°Г Г±Г±Г¬Г®ГІГ°ГЁГ¬. )
 
-    // SetPixelV(hBitmapDC, 100, 100, 0x00FFFFFF); // Работает.
+    // SetPixelV(hBitmapDC, 100, 100, 0x00FFFFFF); // ГђГ ГЎГ®ГІГ ГҐГІ.
 
     for (int y = 0; y < Height; y++)
     {
@@ -172,15 +172,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT messageid, WPARAM wparam, LPARAM lparam
     switch (messageid)
     {
         case WM_CREATE:
-        {						    // Должна возвращать 0, если успешно и не 0, если нет. 
-            //hWndDC = GetDC(hWnd);	// И даже можно проверить через GetLastError(), по моему.
+        {						    // Г„Г®Г«Г¦Г­Г  ГўГ®Г§ГўГ°Г Г№Г ГІГј 0, ГҐГ±Г«ГЁ ГіГ±ГЇГҐГёГ­Г® ГЁ Г­ГҐ 0, ГҐГ±Г«ГЁ Г­ГҐГІ. 
+            //hWndDC = GetDC(hWnd);	// Г€ Г¤Г Г¦ГҐ Г¬Г®Г¦Г­Г® ГЇГ°Г®ГўГҐГ°ГЁГІГј Г·ГҐГ°ГҐГ§ GetLastError(), ГЇГ® Г¬Г®ГҐГ¬Гі.
         }
         break;
 
         case WM_CLOSE:
         {
-            DeleteDC(hBitmapDC);		// Этот мы создали,
-            ReleaseDC(hwnd, hWndDC);	// А этот взяли попользоваться.
+            DeleteDC(hBitmapDC);		// ГќГІГ®ГІ Г¬Г» Г±Г®Г§Г¤Г Г«ГЁ,
+            ReleaseDC(hwnd, hWndDC);	// ГЂ ГЅГІГ®ГІ ГўГ§ГїГ«ГЁ ГЇГ®ГЇГ®Г«ГјГ§Г®ГўГ ГІГјГ±Гї.
             DestroyWindow(hwnd);
         }
         break;
@@ -189,13 +189,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT messageid, WPARAM wparam, LPARAM lparam
             PostQuitMessage(0);
         break;
 
-        case WM_GETICON: // Возвращает hIcon.
+        case WM_GETICON: // Г‚Г®Г§ГўГ°Г Г№Г ГҐГІ hIcon.
             break;
 
         default:
             return DefWindowProcA(hwnd, messageid, wparam, lparam);
     }
 
-    return 0; // Старые добрые времена, 0, он же NULL.
+    return 0; // Г‘ГІГ Г°Г»ГҐ Г¤Г®ГЎГ°Г»ГҐ ГўГ°ГҐГ¬ГҐГ­Г , 0, Г®Г­ Г¦ГҐ NULL.
 }
 
