@@ -30,11 +30,10 @@ static HBITMAP hBitmap;               // переменные и работают как
                                       // приватные поля в классе.
 
 // ----------------------------------------------------------------------------
-ATOM RegisterWndClass(void);
-HWND CreateWnd(const char* , void* );
-LRESULT CALLBACK WndProc(HWND , UINT , WPARAM , LPARAM );
-
-
+static ATOM RegisterWndClass(void);
+//static HWND CreateWnd(const char * const , void * );
+static HWND CreateWnd(int x, int y, int width, int height, const char * const title, void* lptr);
+static LRESULT CALLBACK WndProc(HWND , UINT , WPARAM , LPARAM );
 
 
 // ============================================================================
@@ -42,7 +41,8 @@ void TestDraw(void)
 {
     // Word6bit c; Это мы в другом проекте рассмотрим. )
 
-    // SetPixelV(hBitmapDC, 100, 100, 0x00FFFFFF);
+    // SetPixelV(hBitmapDC, 100, 100, 0x00FFFFFF); // Работает.
+
     for (int y = 0; y < Height; y++)
     {
         for (int x = 0; x < Width; x++)
@@ -54,6 +54,7 @@ void TestDraw(void)
     }
 
 }
+
 
 // ============================================================================
 void CreateWinWnd(void)
@@ -68,11 +69,7 @@ void CreateWinWnd(void)
     dwres = GetLastError();
     Logln("hModule", WndClass);
 
-    hWnd =
-        CreateWindowExA(
-            0L, szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-            300, 300, 640, 480,
-            nullptr, nullptr, hModule, nullptr); // lptr);
+	hWnd = CreateWnd(300, 300, Width, Height, szTitle, nullptr);
     dwres = GetLastError();
     Logln("hWnd", WndClass);
 }
@@ -155,7 +152,7 @@ ATOM RegisterWndClass(void)
 
 
 // --------------------------------------------------------------------------------------------
-HWND CreateWnd(int x, int y, int width, int height, const char* title, void* lptr)
+HWND CreateWnd(int x, int y, int width, int height, const char * const title, void* lptr)
 {
     hWnd =
         CreateWindowExA(0L, szWindowClass, title, WS_OVERLAPPEDWINDOW,

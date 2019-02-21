@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Exes">
+      <UniqueIdentifier>{bc46c3bc-535a-49d5-9788-8742230bca56}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -38,6 +41,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Debug\HelloConsole.exe" />
+    <None Include="Debug\HelloConsole.exe">
+      <Filter>Exes</Filter>
+    </None>
   </ItemGroup>
 </Project>
