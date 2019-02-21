@@ -1,9 +1,9 @@
-// ============================================================================
+п»ї// ============================================================================
 // WinWnd.cpp, 2019
-// Вариант 0.01.00
+// Р’Р°СЂРёР°РЅС‚ 0.01.00
 //
-// Девиз дня: Поиск по файлам строки "TODO" полезен.
-// Git видит кодировку "Кодировка windows-1252" Интересно, почему. ?
+// Р”РµРІРёР· РґРЅСЏ: РџРѕРёСЃРє РїРѕ С„Р°Р№Р»Р°Рј СЃС‚СЂРѕРєРё "TODO" РїРѕР»РµР·РµРЅ.
+// Git РІРёРґРёС‚ РєРѕРґРёСЂРѕРІРєСѓ "РљРѕРґРёСЂРѕРІРєР° windows-1252" РРЅС‚РµСЂРµСЃРЅРѕ, РїРѕС‡РµРјСѓ? (Р РµС€РµРЅРѕ.)
 // ============================================================================
 
 
@@ -22,13 +22,13 @@ int Width = 640, Height = 480;
 static HINSTANCE hModule = nullptr;
 
 static const char * const szWindowClass = "ArtWndClass";
-static const char * const szTitle = "Тестовое окно";
+static const char * const szTitle = "РўРµСЃС‚РѕРІРѕРµ РѕРєРЅРѕ";
 
-static ATOM WndClass = 0;   // Редактор связей ака линкер видит статические
-static HWND hWnd = nullptr; // глобальные переменные только в этом файле
-static HDC hWndDC, hBitmapDC, hMemDC; // они так и называются – файловые
-static HBITMAP hBitmap;               // переменные и работают как
-                                      // приватные поля в классе.
+static ATOM WndClass = 0;   // Р РµРґР°РєС‚РѕСЂ СЃРІСЏР·РµР№ Р°РєР° Р»РёРЅРєРµСЂ РІРёРґРёС‚ СЃС‚Р°С‚РёС‡РµСЃРєРёРµ
+static HWND hWnd = nullptr; // РіР»РѕР±Р°Р»СЊРЅС‹Рµ РїРµСЂРµРјРµРЅРЅС‹Рµ С‚РѕР»СЊРєРѕ РІ СЌС‚РѕРј С„Р°Р№Р»Рµ
+static HDC hWndDC, hBitmapDC, hMemDC; // РѕРЅРё С‚Р°Рє Рё РЅР°Р·С‹РІР°СЋС‚СЃСЏ вЂ“ С„Р°Р№Р»РѕРІС‹Рµ
+static HBITMAP hBitmap;               // РїРµСЂРµРјРµРЅРЅС‹Рµ Рё СЂР°Р±РѕС‚Р°СЋС‚ РєР°Рє
+                                      // РїСЂРёРІР°С‚РЅС‹Рµ РїРѕР»СЏ РІ РєР»Р°СЃСЃРµ.
 
 // ----------------------------------------------------------------------------
 static ATOM RegisterWndClass(void);
@@ -40,9 +40,9 @@ static LRESULT CALLBACK WndProc(HWND , UINT , WPARAM , LPARAM );
 // ============================================================================
 void TestDraw(void)
 {
-    // Word6bit c; Это мы в другом проекте рассмотрим. )
+    // Word6bit c; Р­С‚Рѕ РјС‹ РІ РґСЂСѓРіРѕРј РїСЂРѕРµРєС‚Рµ СЂР°СЃСЃРјРѕС‚СЂРёРј. )
 
-    // SetPixelV(hBitmapDC, 100, 100, 0x00FFFFFF); // Работает.
+    // SetPixelV(hBitmapDC, 100, 100, 0x00FFFFFF); // Р Р°Р±РѕС‚Р°РµС‚.
 
     for (int y = 0; y < Height; y++)
     {
@@ -173,15 +173,15 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT messageid, WPARAM wparam, LPARAM lparam
     switch (messageid)
     {
         case WM_CREATE:
-        {						    // Должна возвращать 0, если успешно и не 0, если нет. 
-            //hWndDC = GetDC(hWnd);	// И даже можно проверить через GetLastError(), по моему.
+        {						    // Р”РѕР»Р¶РЅР° РІРѕР·РІСЂР°С‰Р°С‚СЊ 0, РµСЃР»Рё СѓСЃРїРµС€РЅРѕ Рё РЅРµ 0, РµСЃР»Рё РЅРµС‚. 
+            //hWndDC = GetDC(hWnd);	// Р РґР°Р¶Рµ РјРѕР¶РЅРѕ РїСЂРѕРІРµСЂРёС‚СЊ С‡РµСЂРµР· GetLastError(), РїРѕ РјРѕРµРјСѓ.
         }
         break;
 
         case WM_CLOSE:
         {
-            DeleteDC(hBitmapDC);		// Этот мы создали,
-            ReleaseDC(hwnd, hWndDC);	// А этот взяли попользоваться.
+            DeleteDC(hBitmapDC);		// Р­С‚РѕС‚ РјС‹ СЃРѕР·РґР°Р»Рё,
+            ReleaseDC(hwnd, hWndDC);	// Рђ СЌС‚РѕС‚ РІР·СЏР»Рё РїРѕРїРѕР»СЊР·РѕРІР°С‚СЊСЃСЏ.
             DestroyWindow(hwnd);
         }
         break;
@@ -190,13 +190,13 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT messageid, WPARAM wparam, LPARAM lparam
             PostQuitMessage(0);
         break;
 
-        case WM_GETICON: // Возвращает hIcon.
+        case WM_GETICON: // Р’РѕР·РІСЂР°С‰Р°РµС‚ hIcon.
             break;
 
         default:
             return DefWindowProcA(hwnd, messageid, wparam, lparam);
     }
 
-    return 0; // Старые добрые времена, 0, он же NULL.
+    return 0; // РЎС‚Р°СЂС‹Рµ РґРѕР±СЂС‹Рµ РІСЂРµРјРµРЅР°, 0, РѕРЅ Р¶Рµ NULL.
 }
 
