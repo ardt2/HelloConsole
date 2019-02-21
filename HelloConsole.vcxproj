@@ -142,15 +142,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Text Include="..\HelloGit\Sklad-1.txt" />
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
+    <ClInclude Include="AuxMath.h" />
+    <ClInclude Include="HelloConsole.h" />
+    <ClInclude Include="WinWnd.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HelloConsole.cpp" />
-    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="WinWnd.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
