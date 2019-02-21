@@ -2,6 +2,7 @@
 // HelloConsole.cpp: Консольное приложение с доп. окошками – шаблон.
 //
 // 2019. Вариант 1.
+// If you can't see comments in Russian on Git, download and see its locally.
 // ============================================================================
 
 #include "HelloConsole.h"
