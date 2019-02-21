@@ -4,6 +4,7 @@
 //
 // Девиз дня: Поиск по файлам строки "TODO" полезен.
 // Git видит кодировку "Кодировка windows-1252" Интересно, почему? (Решено.)
+// Локальное сохранение в UTF-8.
 // ============================================================================
 
 
@@ -70,7 +71,7 @@ void CreateWinWnd(void)
     dwres = GetLastError();
     Logln("hModule", WndClass);
 
-	hWnd = CreateWnd(300, 300, Width, Height, szTitle, nullptr);
+    hWnd = CreateWnd(300, 300, Width, Height, szTitle, nullptr);
     dwres = GetLastError();
     Logln("hWnd", WndClass);
 }

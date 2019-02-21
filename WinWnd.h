@@ -37,7 +37,7 @@ template<typename T>
 ostream & Print(const string & msg, const T & obj, ostream & stream = logout)
 {
     stream << msg << " " << obj;
-	return stream;
+    return stream;
 }
 // ----------------------------------------------------------------------
 template<typename T>
@@ -45,7 +45,7 @@ ostream & Println(const string & msg, const T & obj, ostream & stream = logout)
 {
     Print<T>(msg, obj);
     stream << endl;
-	return stream;
+    return stream;
 }
 // ----------------------------------------------------------------------
 template<typename T>
@@ -53,8 +53,8 @@ ostream & Log(const string & msg, const T & obj, ostream & stream = logout)
 {
     // Здесь надо бы сделать выравнивание количеством пробелов.
     if (LOGENABLED) stream << msg << " " << obj;
-	return stream;
-	// if (LOGENABLED) Return(msg, obj); // TODO: Потом переделаю.
+    return stream;
+    // if (LOGENABLED) Return(msg, obj); // TODO: Потом переделаю.
 }
 // ----------------------------------------------------------------------
 template<typename T>
@@ -62,7 +62,7 @@ ostream & Logln(const string & msg, const T & obj, ostream & stream = logout)
 {
     Log<T>(msg, obj);
     if (LOGENABLED) stream << endl;
-	return stream;
+    return stream;
 }
 
 
