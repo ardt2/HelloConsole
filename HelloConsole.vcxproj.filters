@@ -37,4 +37,7 @@
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\HelloConsole.exe" />
+  </ItemGroup>
 </Project>

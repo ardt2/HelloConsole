@@ -154,6 +154,9 @@
     <ClCompile Include="HelloConsole.cpp" />
     <ClCompile Include="WinWnd.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Debug\HelloConsole.exe" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
