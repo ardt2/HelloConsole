@@ -17,7 +17,7 @@
 ostream & logout = cout;
 
 // ----------------------------------------------------------------------------
-int Width = 640, Height = 480;
+static const int Width = 640, Height = 480;
 
 // ----------------------------------------------------------------------------
 static HINSTANCE hModule = nullptr;
@@ -191,8 +191,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT messageid, WPARAM wparam, LPARAM lparam
             PostQuitMessage(0);
         break;
 
-        case WM_GETICON: // Возвращает hIcon.
-            break;
+        case WM_GETICON: // Возвращает hIcon. Будет раз в секунду приходить. Можно в таскбар
+            break;       // рисовать разные иконки.
 
         default:
             return DefWindowProcA(hwnd, messageid, wparam, lparam);

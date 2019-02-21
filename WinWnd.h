@@ -47,6 +47,14 @@ ostream & Println(const string & msg, const T & obj, ostream & stream = logout)
     stream << endl;
     return stream;
 }
+// ======================================================================
+template<typename T>
+ostream & Println(const T & obj, ostream & stream = logout)
+{
+    stream << obj << endl;
+    return stream;
+}
+
 // ----------------------------------------------------------------------
 template<typename T>
 ostream & Log(const string & msg, const T & obj, ostream & stream = logout)
